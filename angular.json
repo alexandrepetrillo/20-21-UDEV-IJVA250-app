@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ijva250-angular-app"
+    }
+  },
+  "defaultProject": "ijva250-angular-app",
+  "cli": {
+    "analytics": false
+  }
 }

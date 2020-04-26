@@ -1,0 +1,16 @@
+<table border="1" class="table">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Ses factures</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let client of clients$ | async">
+    <td>{{client.nom}}</td>
+    <td>{{client.prenom}}</td>
+    <td><a href="http://localhost:8080/export/clients/{{client.id}}/factures/xlsx">Télécharger toutes ses factures</a></td>
+  </tr>
+  </tbody>
+</table>

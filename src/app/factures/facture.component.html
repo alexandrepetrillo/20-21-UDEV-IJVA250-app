@@ -1,0 +1,16 @@
+<table border="1" *ngIf="facture$ | async as facture">
+  <thead>
+  <tr>
+    <th>Désignation</th>
+    <th>Quantité</th>
+    <th>Prix unitaire</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ligneFacture of facture.ligneFactures">
+    <td>{{ligneFacture.article.libelle}}</td>
+    <td>{{ligneFacture.quantite}}</td>
+    <td>{{ligneFacture.article.prix}}</td>
+  </tr>
+  </tbody>
+</table>
