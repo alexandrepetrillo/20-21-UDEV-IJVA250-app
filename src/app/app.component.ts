@@ -1,23 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Facture } from './dto/facture.dto';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <html>
+    <head>
+      <title></title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+    <h1>AMAZON.COM</h1>
+    <router-outlet></router-outlet>
+    </body>
+    </html>
+  `,
+  styles: []
 })
 export class AppComponent implements OnInit {
 
-  factures$: Observable<Facture[]>;
 
-  constructor(private http: HttpClient) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.factures$ = this.http.get<Facture[]>('http://localhost:8080/rest/factures');
   }
+
 
 }
 
