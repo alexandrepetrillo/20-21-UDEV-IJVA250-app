@@ -3,6 +3,7 @@
   <tr>
     <th>Libelle</th>
     <th>Prix</th>
+    <th>Stock</th>
   </tr>
   <tr *ngFor="let article of articles$ | async">
     <td>
@@ -11,5 +12,6 @@
 <!--      </a>-->
     </td>
     <td>{{article.prix}}</td>
+    <td>{{article.stock}}</td>
   </tr>
 </table>

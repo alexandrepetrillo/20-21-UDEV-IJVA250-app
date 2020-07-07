@@ -10,6 +10,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {AcheterComponent} from "./acheter/acheter.component";
 import {FormsModule} from "@angular/forms";
+import {StockComponent} from './stock/stock.component';
 
 
 const appRoutes: Routes = [
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'acheter',
     component: AcheterComponent
+  },
+  {
+    path: 'stock',
+    component: StockComponent
   },
   {path: '', pathMatch: 'full', component: HomeComponent}
 ];
@@ -33,6 +38,7 @@ const appRoutes: Routes = [
     FactureComponent,
     ArticlesComponent,
     AcheterComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,

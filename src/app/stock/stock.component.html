@@ -1,0 +1,11 @@
+
+<table border="1">
+  <tr *ngFor="let article of articles$ | async">
+    <td>{{article.libelle}}</td>
+    <td><input [value]="article.stock" #qty></td>
+    <td>
+      <button (click)="modifierStock(article, qty.value)">Modifier stock</button>
+    </td>
+  </tr>
+</table>
+
