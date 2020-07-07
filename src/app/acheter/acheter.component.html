@@ -2,7 +2,7 @@
   <option *ngFor="let article of articles$ | async" [ngValue]="article">{{article.libelle}}</option>
 </select>
 <input #inputQuantite>
-<button (click)="add(inputQuantite.value, selectedArticle)">add</button>
+<button id="add" (click)="add(inputQuantite.value, selectedArticle)">add</button>
 
 <table border="1">
   <tr *ngFor="let ligne of achats">
@@ -14,4 +14,4 @@
   </tr>
 </table>
 
-<button (click)="acheter()">Acheter</button>
+<button (click)="acheter()" id="acheter">Acheter</button>
