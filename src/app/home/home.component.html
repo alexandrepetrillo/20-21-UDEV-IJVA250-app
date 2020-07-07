@@ -9,7 +9,7 @@
   -<a href="http://localhost:8080/export/articles/xlsx">xlsx</a>
   -<a href="http://localhost:8080/export/articles/pdf">pdf</a></h1>
 <hr/>
-<app-clients></app-clients>
+<app-articles></app-articles>
 
 <hr/>
 <h1>Clients
@@ -17,19 +17,16 @@
   -<a href="http://localhost:8080/export/clients/xlsx">xlsx</a>
   -<a href="http://localhost:8080/export/clients/xlsx">pdf</a></h1>
 <hr/>
-<app-articles></app-articles>
+<app-clients></app-clients>
 
 <hr/>
 <h1>Factures
   <a href="http://localhost:8080/export/factures/xlsx">xlsx</a>
 </h1>
 <hr/>
-
 <div *ngFor="let facture of factures$ | async">
-
   <h2>Facture numéro {{facture.id}} de {{facture.client.nom}} {{facture.client.prenom}}
     <a href="http://localhost:8080/export/factures/{{facture.id}}/pdf">pdf</a>
   </h2>
   <app-facture [id]="facture.id"></app-facture>
-
 </div>

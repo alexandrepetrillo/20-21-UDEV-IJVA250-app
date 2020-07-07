@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Article} from '../dto/article.dto';
 import {Observable} from "rxjs";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-acheter',
@@ -14,7 +15,10 @@ export class AcheterComponent implements OnInit {
   articles$: Observable<Article[]>;
   selectedArticle: Article;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router
+    ) {
   }
 
   ngOnInit(): void {
@@ -31,11 +35,13 @@ export class AcheterComponent implements OnInit {
       this.achats.map(achat => {
         return {quantite: achat.quantite, articleId: achat.article.id}
       })
-    ).subscribe();
+    ).subscribe(() => {
+      this.router.navigate(['/']);
+    });
   }
 
   add(value: string, article: Article) {
     const quantite = parseInt(value);
-    this.achats.push({quantite, article})
+    this.achats.push({quantite, article});
   }
 }
